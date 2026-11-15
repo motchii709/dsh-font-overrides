@@ -1,7 +1,7 @@
 {
   "name": "dsh-font-overrides",
-  "version": "0.1.0",
-  "description": "Custom UI font family for the DeepSeek Harness web profile — a minimal standard DSH client plugin that overrides the --dsw-font-family token.",
+  "version": "0.2.0",
+  "description": "Google Fonts picker + chat-scoped UI font override for the DeepSeek Harness web profile — a minimal standard DSH client plugin that overrides the --dsw-font-family token.",
   "keywords": [
     "cordis",
     "deepseek-harness",
@@ -15,7 +15,8 @@
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
-    "./cordis.patch.yml": "./cordis.patch.yml"
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
   },
   "files": [
     "lib/index.js",
@@ -28,7 +29,10 @@
     },
     "client": {
       "platform": "web",
-      "immediately": true
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
     }
   }
 }
